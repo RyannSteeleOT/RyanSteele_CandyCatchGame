@@ -9,6 +9,7 @@ public class main : MonoBehaviour
 
     private float candyTimer;
     private int candyCount = 0;
+    private int score = 0;
 
     void Start()
     {
@@ -31,4 +32,10 @@ public class main : MonoBehaviour
         Vector2 spawn = new Vector2 (Random.Range(-8f, 8f), 5.5f);
         Rigidbody2D newCandy = Instantiate(candyPrefab, spawn, Quaternion.identity);//Spawn object rigidbody
     }
+
+    public void addScore(int amount)//Add points to the score
+    {
+        score += amount;
+    }
+
 }
