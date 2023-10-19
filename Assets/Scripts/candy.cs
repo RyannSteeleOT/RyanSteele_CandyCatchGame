@@ -24,12 +24,18 @@ public class candy : MonoBehaviour
 
         spawnIndex = Random.Range(0, 20);//Set candy type from candySpawn array
 
-        textures[candySpawn[spawnIndex]].SetActive(true);//Set corresponding sprite to be active
+        textures[candySpawn[spawnIndex] - 1].SetActive(true);//Set corresponding sprite to be active
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider collision)
     {
-        
+
+        if (collision.gameObject.name == "Player")
+        {
+            GetComponent<main>().addScore(spawnIndex);
+        }
+
+        Destroy(gameObject);
+
     }
 }
