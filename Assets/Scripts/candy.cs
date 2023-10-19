@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class candy : MonoBehaviour
 {
-
-    [SerializeField] private Image[] textures;
+    [SerializeField]  private GameObject[] textures;
 
     void Start()
     {
-        //textures[Random.Range(0, textures.Length).setActive(true)];
+        //textures = GameObject.FindGameObjectsWithTag("texture");
+        textures[Random.Range(0, textures.Length)].SetActive(true);
     }
 
     // Update is called once per frame
